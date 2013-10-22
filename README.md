@@ -114,7 +114,9 @@ My considerations as for 23/10/2013
 
 'go build' tries to compile every file it finds (both *.go and *.c types) and then it links everything together.
 'go build gofile.go' tries to compile only gofile.go and its dependencies.
+
 Thus, for the first command to work including *.c files into go code with // #include won't work, need to include header files *.h only, corresponding *.c files will be compiled separetelly and then linked;
+including *.c files will cause an error because these files will be compiled twice and there will be a conflict during linking;
 for the second command to work we need to include *.c files or provide already compiled libraries if we want to include header files *.h
 
 This project shows the approach which works, but perhaps its not ideal – probably there is a better solution with ompiler and linker flags – this should be investigated.
