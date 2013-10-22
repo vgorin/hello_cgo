@@ -30,16 +30,19 @@ Thank you
 To simplify everything I've created a more simple app with only two files: hello.go and hello.c:
 
 hello.c:
+--------
 
+<pre>
 #include <stdlib.h>
 
 int rnd() {
 	return random();
 }
-
+</pre>
 
 hello.go:
-
+---------
+<pre>
 package main
 
 // #include "hello.c"
@@ -54,9 +57,10 @@ func Random() int {
 func main() {
 	fmt.Println(Random());
 }
-
+</pre>
 The symptoms of compiling these are exactly the same. It compiles in eclipse, but not with go build:
 
+<pre>
 KIEV-AIR:src vgorin$ go build
 # _/Users/vgorin/DEVELOP/eclipse_workspace/hello_world_c/src
 duplicate symbol _rnd in:
@@ -64,9 +68,11 @@ duplicate symbol _rnd in:
     $WORK/_/Users/vgorin/DEVELOP/eclipse_workspace/hello_world_c/src/_obj/hello.o
 ld: 1 duplicate symbol for architecture x86_64
 collect2: ld returned 1 exit status
+</pre>
 
 Output of go build -x:
 
+<pre>
 KIEV-AIR:src vgorin$ go build -x
 WORK=/var/folders/j1/5yp9qqm5429_j05vcg_gfd0m0000gn/T/go-build388081714
 mkdir -p $WORK/_/Users/vgorin/DEVELOP/eclipse_workspace/hello_world_c/src/_obj/
@@ -85,8 +91,10 @@ duplicate symbol _rnd in:
     $WORK/_/Users/vgorin/DEVELOP/eclipse_workspace/hello_world_c/src/_obj/hello.o
 ld: 1 duplicate symbol for architecture x86_64
 collect2: ld returned 1 exit status
+</pre>
 
 Environment variables are set:
+<pre>
 KIEV-AIR:src vgorin$ echo $GOROOT
 /usr/local/go
 KIEV-AIR:src vgorin$ echo $GOPATH
@@ -99,7 +107,7 @@ KIEV-AIR:src vgorin$ echo $GOARCH
 amd64
 KIEV-AIR:src vgorin$ pwd
 /Users/vgorin/DEVELOP/eclipse_workspace/hello_world_c/src
-
+</pre>
 
 My considerations as for 23/10/2013
 ===================================
