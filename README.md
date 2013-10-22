@@ -26,7 +26,7 @@ Please post your ideas why such a thing can happen.
 
 Thank you
 
-=========================
+-------------------------
 To simplify everything I've created a more simple app with only two files: hello.go and hello.c:
 
 hello.c:
@@ -99,8 +99,10 @@ KIEV-AIR:src vgorin$ echo $GOARCH
 amd64
 KIEV-AIR:src vgorin$ pwd
 /Users/vgorin/DEVELOP/eclipse_workspace/hello_world_c/src
-=========================
+
+
 My considerations as for 23/10/2013
+===================================
 
 'go build' tries to compile every file it finds (both *.go and *.c types) and then it links everything together.
 'go build gofile.go' tries to compile only gofile.go and its dependencies.
