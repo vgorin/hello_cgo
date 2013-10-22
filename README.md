@@ -4,10 +4,12 @@ hello_cgo
 The simplest cgo demo, describes and hopefully solves my old problem "Weird things happening while compiling a Go program with C code (go build, Eclipse, Mac OS X)"
 
 
-=========================
+-------------------------
 https://groups.google.com/forum/#!searchin/Golang-Nuts/vgorin/golang-nuts/IxPSrh1X7QE/JnWfb8vMX5MJ
-=========================
+
+
 Original problem post(s):
+=========================
 
 Hello, guys,
 
